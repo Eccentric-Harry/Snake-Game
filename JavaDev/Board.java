@@ -113,6 +113,7 @@ public class Board extends JPanel implements ActionListener { // panel is simila
     else
     {
         gameOver(g);
+        score(g);
     } 
     }
 
@@ -125,6 +126,17 @@ public class Board extends JPanel implements ActionListener { // panel is simila
         g.setFont(font);
         g.drawString(msg, (300 - metrics.stringWidth(msg)) / 2, 300/2);
         
+    }
+        public void score(Graphics g)
+    {
+        int score = dots - 3;
+        //String score_String  = String.valueOf(score);
+        String score_String = " Your Score - " + score;
+        Font font = new Font("SAN_SERIF" , Font.BOLD, 14);
+        //FontMetrics metrics = getFontMetrics(font);
+        g.setColor(Color.GREEN);
+        g.setFont(font);
+        g.drawString(score_String, 105, 170);
     }
 
     public void checkApple()
